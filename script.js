@@ -66,3 +66,48 @@ document.querySelector('.btn--close-cookie').
 addEventListener('click', function() {
   message.remove();
 })
+
+// Styles, Attributes and Classes
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color)
+console.log(getComputedStyle(message).height)
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px'
+
+// to change the color or elements
+document.documentElement.style.setProperty('--color-primary', 'orangered')
+
+// Attributes
+// src, id, class etc
+
+const logo = document.querySelector('.nav__logo');
+// standard
+console.log(logo.alt);
+console.log(logo.src); // absolute link
+console.log(logo.className);
+
+// Non-standard
+console.log(logo.designer);
+
+// But can get the non standard property
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
+console.log(logo.getAttribute('src')); // relative link
+
+// Data Attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+logo.classList.add('anything')
+logo.classList.remove('anything')
+logo.classList.toggle('anything')
+logo.classList.contains('anything')
+
